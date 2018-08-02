@@ -1,0 +1,252 @@
+﻿/* 
+Custom CSS for...
+'Modern Business' HTML Theme by Start Bootstrap
+
+All Start Bootstrap themes are licensed under Apache 2.0. 
+For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
+*/
+
+/* Global Styles */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-top: 50px;
+    /* body padding for fixed top nav */
+}
+
+.img-home-portfolio,
+.img-customer,
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.tab-pane {
+    margin-top: 15px;
+}
+
+.text-responsive {
+    color: #E8B500;
+    font: bold;
+    font-family: 'Sansation';
+    font-size: 525%;
+    padding-bottom: 0px;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* Page Sections */
+.section,
+.section-colored {
+    padding: 0px;
+    background-color: rgba(29, 29, 29, 0.50);
+}
+
+.section-colored {
+    background-color: #e1e1e1;
+    /* change this to change the background color of a colored section */
+}
+
+.sidebar {
+    margin-top: 40px;
+}
+
+    .sidebar ul {
+        border-radius: 5px;
+        padding: 5px;
+        border: 1px solid #cccccc;
+    }
+
+/* Half Page Height Carousel Customization */
+.carousel {
+    height: 25%;
+}
+
+.item,
+.active,
+.carousel-inner {
+    height: 100%;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Social Icons Styles */
+.list-social-icons {
+    margin-bottom: 45px;
+}
+
+.tooltip-social a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.facebook-link a:hover {
+    color: #3b5998;
+}
+
+.linkedin-link a:hover {
+    color: #007fb1;
+}
+
+.twitter-link a:hover {
+    color: #39a9e0;
+}
+
+.google-plus-link a:hover {
+    color: #d14836;
+}
+
+/* Service Page Styles */
+.service-icon {
+    font-size: 50px;
+}
+
+/* 404 Page Styles */
+.error-404 {
+    font-size: 8em;
+}
+
+/* Pricing Page Styles */
+.price {
+    font-size: 4em;
+}
+
+.price-cents {
+    vertical-align: super;
+    font-size: 50%;
+}
+
+.price-month {
+    font-size: 35%;
+    font-style: italic;
+}
+
+/* Footer Styles */
+footer {
+    margin: 50px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+
+    .carousel {
+        height: 70%;
+        /* increases the carousel height so it looks good on phones */
+    }
+}
+
+@media (max-width: 680px) {
+
+    .text-responsive {
+        font-size: 400%;
+    }
+}
+
+@media (min-width: 843px) {
+    #profilePicColumn {
+        display: inherit;
+        width: 50%;
+        float: left;
+    }
+
+    #backgroundColumn {
+        display: inherit;
+        width: 50%;
+        float: left;
+    }
+
+    #aboutSingleColumn {
+        display: none;
+    }
+}
+
+@media (max-width: 1072px) {
+    .text-responsive {
+        font-size: 450%;
+    }
+}
+
+@media (max-width: 842px) {
+    #profilePicColumn {
+        display: none;
+    }
+
+    #backgroundColumn {
+        display: none;
+    }
+
+    #aboutSingleColumn {
+        display: inherit;
+        padding: 5%;
+    }
+
+    .img-responsive {
+        padding-top: 5%;
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    .text-responsive {
+        font-size: 400%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 842px) {
+    .text-responsive {
+        font-size: 300%;
+    }
+
+    .img-responsive {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+.single-Column-Text {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+@media (max-width: 1199px) {
+    #portfolio1 {
+        height: 100%;
+        width: 100%;
+    }
+
+    .portfolio1 {
+        width: 70%;
+        float: left;
+    }
+
+    .portfolio2 {
+        width: 27%;
+    }
+}
+
+@media (min-width: 1200px) {
+    #portfolio1 {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .portfolio1 {
+        width: 95%;
+        padding-left: 5%;
+    }
+
+    .portfolio2 {
+        padding-left: 5%;
+    }
+}
