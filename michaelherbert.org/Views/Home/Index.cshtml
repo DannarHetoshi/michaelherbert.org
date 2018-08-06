@@ -1,4 +1,5 @@
 ﻿@{
+    @model michaelherbert.org.ViewModels.ContactViewModel
     ViewBag.Title = "Home";
 }
 
@@ -92,7 +93,7 @@
                 <!--Section heading-->
                 <h2 class="h1-responsive font-weight-bold text-center my-5">Contact Me</h2>
                 <!--Section description-->
-                <div class="col-sm-12">
+                <div class="col-sm-5">
                     <p class="text-center w-responsive mx-auto mb-5">
                         Thanks for visiting my site!  I'm thrilled that you'd like to get in touch with me.
                     </p>
@@ -109,37 +110,42 @@
                     <p class="text-center" style="background-color: inherit; color: #E8B500;">913.269.4114</p>
                 </div>
 
-                @*<div class="col-sm-7">
+
+                @if (ViewBag.Message == null)
+                {
+                <div class="col-sm-7">
                     <!--Grid column-->
                     <div class="col-md-12 mb-md-0 mb-5">
-                        <form id="contact-form" name="contact-form" action="mail.php" method="POST" style="padding-left: 10px;">
+                        <form id="contact-form" name="contact-form" method="POST" style="padding-left: 10px;">
                             <!--Grid row-->
                             <div class="row">
                                 <!--Grid column-->
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="name" name="name" class="form-control">
                                         <label for="name" class="">Your name</label>
+                                        <input type="text" id="name" name="name" class="form-control">
+
                                     </div>
                                 </div>
                                 <!--Grid column-->
                                 <!--Grid column-->
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="email" name="email" class="form-control">
                                         <label for="email" class="">Your email</label>
+                                        <input type="text" id="email" name="email" class="form-control">
+
                                     </div>
                                 </div>
                                 <!--Grid column-->
-
                             </div>
                             <!--Grid row-->
                             <!--Grid row-->
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="subject" name="subject" class="form-control">
                                         <label for="subject" class="">Subject</label>
+                                        <input type="text" id="subject" name="subject" class="form-control">
+
                                     </div>
                                 </div>
                             </div>
@@ -149,41 +155,51 @@
                                 <!--Grid column-->
                                 <div class="col-md-12">
                                     <div class="md-form">
-                                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
                                         <label for="message">Your message</label>
+                                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+
                                     </div>
                                 </div>
                             </div>
+                            <div class="text-center text-md-left">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
                             <!--Grid row-->
                         </form>
-                        <div class="text-center text-md-left">
-                            <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                        
+
+                        <div>
+                            @if (ViewBag.Message != null)
+                            {
+                                <div>@ViewBag.Message</div>
+                            }
                         </div>
-                        <div class="status">
+
+                        @*<div class="status">
                             <script>
                                 function validateForm() {
-                                    var name =  document.getElementById('name').value;
+                                    var name = document.getElementById('name').value;
                                     if (name == "") {
                                         document.getElementById('status').innerHTML = "Name cannot be empty";
                                         return false;
                                     }
-                                    var email =  document.getElementById('email').value;
+                                    var email = document.getElementById('email').value;
                                     if (email == "") {
                                         document.getElementById('status').innerHTML = "Email cannot be empty";
                                         return false;
                                     } else {
                                         var re = /^(([^<>()\[\]\\.,;:\s"]+(\.[^<>()\[\]\\.,;:\s"]+)*)|(".+"))$/;
-                                        if(!re.test(email)){
+                                        if (!re.test(email)) {
                                             document.getElementById('status').innerHTML = "Email format invalid";
                                             return false;
                                         }
                                     }
-                                    var subject =  document.getElementById('subject').value;
+                                    var subject = document.getElementById('subject').value;
                                     if (subject == "") {
                                         document.getElementById('status').innerHTML = "Subject cannot be empty";
                                         return false;
                                     }
-                                    var message =  document.getElementById('message').value;
+                                    var message = document.getElementById('message').value;
                                     if (message == "") {
                                         document.getElementById('status').innerHTML = "Message cannot be empty";
                                         return false;
@@ -214,11 +230,12 @@
 
                                 }
                             </script>
-                        </div>
-                    </div>*@
+                        </div>*@
+                    </div>
                     <!--Grid column-->
                     <!--Grid column-->
                 </div>
+                }
                 <!--Grid column-->
             </section>
         </div>
