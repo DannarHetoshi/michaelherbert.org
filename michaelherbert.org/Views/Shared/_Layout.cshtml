@@ -4,11 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Michael Herbert is a Freelance Web Developer available for immediate hire!">
+    <meta name="keywords" content="Michael Herbert, Web, Website, Application, Software, Front-End, Back-End, Full-stack, Developer, Engineer.">
     <title>Michael Herbert - Home</title>
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/modern-business.css" rel="stylesheet">
+    @*<link href="~/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">*@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -32,10 +37,26 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
+
                     <li id="about">
                         <a href="/About">About</a>
                     </li>
 
+                    <li id="contact">
+                        <a href="/Contact">Contact</a>
+                    </li>
+
+                    <li id="blog" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li id="blogHome2">
+                                <a href="/Blog/Home">Blog Home</a>
+                            </li>
+                            <li id="blogPost">
+                                <a href="/Blog/Post">Newest Post</a>"
+                            </li>
+                        </ul>
+                    </li>
 
                     <li id="portfolio" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
@@ -43,7 +64,17 @@
                             <li id="1columnportfolio">
                                 <a href="/Portfolio/OneColumn">Portfolio</a>
                             </li>
-
+                        </ul>
+                    </li>
+                    <li id="loginPage" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li id="Login">
+                                <a href="/Login/Login">Login Page</a>
+                            </li>
+                            <li id="New User Registration">
+                                <a href="#"></a>
+                            </li>
                         </ul>
                     </li>
 

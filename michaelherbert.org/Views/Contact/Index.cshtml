@@ -1,66 +1,178 @@
 ﻿@{
+    @model michaelherbert.org.ViewModels.ContactViewModel
     ViewBag.Title = "Contact";
 }
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Contact <small>We'd Love to Hear From You!</small></h1>
-            <ol class="breadcrumb">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li class="active">Contact</li>
-            </ol>
-        </div>
-        <div class="col-lg-12">
-            <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
-            <iframe width="100%" scrolling="no" height="400px" frameborder="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed" marginwidth="0" marginheight="0"></iframe>
-        </div>
-    </div><!-- /.row -->
-    <div class="row">
-        <div class="col-sm-8">
-            <h3>Let's Get In Touch!</h3>
-            <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-            <form action="contact-form-submission.php" method="POST" role="form">
-                <div class="row">
-                    <div class="form-group col-lg-4">
-                        <label for="input1">Name</label>
-                        <input type="text" id="input1" class="form-control" name="contact_name">
-                    </div>
-                    <div class="form-group col-lg-4">
-                        <label for="input2">Email Address</label>
-                        <input type="email" id="input2" class="form-control" name="contact_email">
-                    </div>
-                    <div class="form-group col-lg-4">
-                        <label for="input3">Phone Number</label>
-                        <input type="phone" id="input3" class="form-control" name="contact_phone">
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="form-group col-lg-12">
-                        <label for="input4">Message</label>
-                        <textarea id="input4" rows="6" class="form-control" name="contact_message"></textarea>
-                    </div>
-                    <div class="form-group col-lg-12">
-                        <input type="hidden" value="contact" name="save">
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </div>
+<div class="container bg-success">
+    <section class="section" style="color: rgba(232, 181, 0, 0.90)">
+        <div class="row bg-fill">
+            <div class="col-lg-12">
+                <h1 class="page-header">Contact Me! <small>I'd love to hear from you!</small></h1>
+                <ol class="breadcrumb">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="active">Contact</li>
+                </ol>
+            </div>
+            <!--<div class="col-lg-12">
+                 Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it!
+                <iframe width="100%" scrolling="no" height="400px" frameborder="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed" marginwidth="0" marginheight="0"></iframe>
+            </div>-->
+        </div><!-- /.row -->
+        <div class="container bg-fill" style="margin-left: -15px; margin-right: -15px;">
+            <div class="col-lg-12 row" style>
+
+                <!--Section description-->
+                <div class="col-sm-5">
+                    <p class="text-center w-responsive mx-auto mb-5">
+                        Thanks for visiting my site! &nbsp;I'm thrilled that you'd like to get in touch with me.
+                        &nbsp;Are you a recruiter? &nbsp;A Hiring Manager? &nbsp;Do you have a freelance work you'd like to contract me for?
+                        Please find my contact information listed below!
+                    </p>
+                    <p class="text-center w-responsive mx-auto mb-5">
+                        <h3>Michael Herbert</h3>
+                        <h4>Freelance Web Developer</h4>
+                    <p>
+                        Michael@MichaelHerbert.org<br>
+                        Fort Collins, CO<br>
+                    </p>
+                    <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (913) 269-4114</p>
+                    <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>: <a href="mailto:michael@michaelherbert.org">michael@michaelherbert.org</a></p>
+                    <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM (MDT)</p>
+                    <ul class="list-unstyled list-inline list-social-icons">
+                        <li class="tooltip-social facebook-link"><a title="Facebook" data-placement="top" data-toggle="tooltip" href="#facebook-page"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+                        <li class="tooltip-social linkedin-link"><a title="LinkedIn" data-placement="top" data-toggle="tooltip" href="https://www.linkedin.com/in/michael19herbert84/"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+                        <li class="tooltip-social twitter-link"><a title="Twitter" data-placement="top" data-toggle="tooltip" href="https://www.twitter.com/DannarHetoshi"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                    </ul>
                 </div>
-            </form>
-        </div>
-        <div class="col-sm-4">
-            <h3>Modern Business</h3>
-            <h4>A Start Bootstrap Template</h4>
-            <p>
-                5555 44th Street N.<br>
-                Bootstrapville, CA 32323<br>
-            </p>
-            <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: (555) 984-3600</p>
-            <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>: <a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a></p>
-            <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
-            <ul class="list-unstyled list-inline list-social-icons">
-                <li class="tooltip-social facebook-link"><a title="Facebook" data-placement="top" data-toggle="tooltip" href="#facebook-page"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-                <li class="tooltip-social linkedin-link"><a title="LinkedIn" data-placement="top" data-toggle="tooltip" href="#linkedin-company-page"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
-                <li class="tooltip-social twitter-link"><a title="Twitter" data-placement="top" data-toggle="tooltip" href="#twitter-profile"><i class="fa fa-twitter-square fa-2x"></i></a></li>
-                <li class="tooltip-social google-plus-link"><a title="Google+" data-placement="top" data-toggle="tooltip" href="#google-plus-page"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
-            </ul>
-        </div>
-    </div><!-- /.row -->
+
+                @if (ViewBag.Message == null)
+                {
+                    <div class="col-sm-7">
+                        <!--Grid column-->
+                        <div class="col-md-12 mb-md-0 mb-5">
+                            <form id="contact-form" name="contact-form" method="POST" style="padding-left: 10px;">
+                                <!--Grid row-->
+                                <div class="row">
+                                    <!--Grid column-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <label for="name" class="">Your name</label>
+                                            <input type="text" id="name" name="name" class="form-control">
+
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <label for="email" class="">Your email</label>
+                                            <input type="text" id="email" name="email" class="form-control">
+
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+                                </div>
+                                <!--Grid row-->
+                                <!--Grid row-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="md-form mb-0">
+                                            <label for="subject" class="">Subject</label>
+                                            <input type="text" id="subject" name="subject" class="form-control">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Grid row-->
+                                <!--Grid row-->
+                                <div class="row">
+                                    <!--Grid column-->
+                                    <div class="col-md-12">
+                                        <div class="md-form">
+                                            <label for="message">Your message</label>
+                                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center text-md-left">
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                </div>
+                                <!--Grid row-->
+                            </form>
+
+
+                            <div>
+                                @if (ViewBag.Message != null)
+                                {
+                                    <div>@ViewBag.Message</div>
+                                }
+                            </div>
+
+                            @*<div class="status">
+                                    <script>
+                                        function validateForm() {
+                                            var name = document.getElementById('name').value;
+                                            if (name == "") {
+                                                document.getElementById('status').innerHTML = "Name cannot be empty";
+                                                return false;
+                                            }
+                                            var email = document.getElementById('email').value;
+                                            if (email == "") {
+                                                document.getElementById('status').innerHTML = "Email cannot be empty";
+                                                return false;
+                                            } else {
+                                                var re = /^(([^<>()\[\]\\.,;:\s"]+(\.[^<>()\[\]\\.,;:\s"]+)*)|(".+"))$/;
+                                                if (!re.test(email)) {
+                                                    document.getElementById('status').innerHTML = "Email format invalid";
+                                                    return false;
+                                                }
+                                            }
+                                            var subject = document.getElementById('subject').value;
+                                            if (subject == "") {
+                                                document.getElementById('status').innerHTML = "Subject cannot be empty";
+                                                return false;
+                                            }
+                                            var message = document.getElementById('message').value;
+                                            if (message == "") {
+                                                document.getElementById('status').innerHTML = "Message cannot be empty";
+                                                return false;
+                                            }
+                                            document.getElementById('status').innerHTML = "Sending...";
+                                            formData = {
+                                                'name': $('input[name=name]').val(),
+                                                'email': $('input[name=email]').val(),
+                                                'subject': $('input[name=subject]').val(),
+                                                'message': $('textarea[name=message]').val()
+                                            };
+
+
+                                            $.ajax({
+                                                url: "mail.php",
+                                                type: "POST",
+                                                data: formData,
+                                                success: function (data, textStatus, jqXHR) {
+
+                                                    $('#status').text(data.message);
+                                                    if (data.code) //If mail was sent successfully, reset the form.
+                                                        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+                                                },
+                                                error: function (jqXHR, textStatus, errorThrown) {
+                                                    $('#status').text(jqXHR);
+                                                }
+                                            });
+
+                                        }
+                                    </script>
+                                </div>*@
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                    </div>
+                }
+                <!--Grid column-->
+
+
+            </div>
+        </div><!-- /.row -->
+    </section>
 </div>

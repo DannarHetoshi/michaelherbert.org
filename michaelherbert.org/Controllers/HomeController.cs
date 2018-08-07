@@ -59,7 +59,6 @@ namespace michaelherbert.org.Controllers
             {
                 using (var mail = new MailMessage())
                 {
-                    const string email = "michael@michaelherbert.org";
                     string password = WebConfigurationManager.AppSettings.Get("emailPassword").ToString();
 
                     var loginInfo = new NetworkCredential("michael.herbert.84@gmail.com", password);
