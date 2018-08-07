@@ -87,6 +87,19 @@
         </div>
     </div>
     <div class="container bg-fill">
+        <div class="row">
+            <section class="section" style="color: rgba(232, 181, 0, 0.90)">
+                <div class="col-lg-12">
+                    <hr />
+                    <h4 class="text-center w-responsive mx-auto">
+                    Github Repository: <a href="https://github.com/DannarHetoshi/michaelherbert.org">github.com/DannarHetoshi/michaelherbert.org</a>
+                    </h4> 
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="container bg-fill">
+        <hr />
         <div class="row col-lg-12" style="padding: 15px;">
             <section class="section" style="color: rgba(232, 181, 0, 0.90)">
 
@@ -113,128 +126,128 @@
 
                 @if (ViewBag.Message == null)
                 {
-                <div class="col-sm-7">
-                    <!--Grid column-->
-                    <div class="col-md-12 mb-md-0 mb-5">
-                        <form id="contact-form" name="contact-form" method="POST" style="padding-left: 10px;">
-                            <!--Grid row-->
-                            <div class="row">
-                                <!--Grid column-->
-                                <div class="col-md-6">
-                                    <div class="md-form mb-0">
-                                        <label for="name" class="">Your name</label>
-                                        <input type="text" id="name" name="name" class="form-control">
+                    <div class="col-sm-7">
+                        <!--Grid column-->
+                        <div class="col-md-12 mb-md-0 mb-5">
+                            <form id="contact-form" name="contact-form" method="POST" style="padding-left: 10px;">
+                                <!--Grid row-->
+                                <div class="row">
+                                    <!--Grid column-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <label for="name" class="">Your name</label>
+                                            <input type="text" id="name" name="name" class="form-control">
 
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <label for="email" class="">Your email</label>
+                                            <input type="text" id="email" name="email" class="form-control">
+
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+                                </div>
+                                <!--Grid row-->
+                                <!--Grid row-->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="md-form mb-0">
+                                            <label for="subject" class="">Subject</label>
+                                            <input type="text" id="subject" name="subject" class="form-control">
+
+                                        </div>
                                     </div>
                                 </div>
-                                <!--Grid column-->
-                                <!--Grid column-->
-                                <div class="col-md-6">
-                                    <div class="md-form mb-0">
-                                        <label for="email" class="">Your email</label>
-                                        <input type="text" id="email" name="email" class="form-control">
+                                <!--Grid row-->
+                                <!--Grid row-->
+                                <div class="row">
+                                    <!--Grid column-->
+                                    <div class="col-md-12">
+                                        <div class="md-form">
+                                            <label for="message">Your message</label>
+                                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
 
+                                        </div>
                                     </div>
                                 </div>
-                                <!--Grid column-->
-                            </div>
-                            <!--Grid row-->
-                            <!--Grid row-->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="md-form mb-0">
-                                        <label for="subject" class="">Subject</label>
-                                        <input type="text" id="subject" name="subject" class="form-control">
-
-                                    </div>
+                                <div class="text-center text-md-left">
+                                    <button type="submit" class="btn btn-primary">Send</button>
                                 </div>
-                            </div>
-                            <!--Grid row-->
-                            <!--Grid row-->
-                            <div class="row">
-                                <!--Grid column-->
-                                <div class="col-md-12">
-                                    <div class="md-form">
-                                        <label for="message">Your message</label>
-                                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                                <!--Grid row-->
+                            </form>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center text-md-left">
-                                <button type="submit" class="btn btn-primary">Send</button>
-                            </div>
-                            <!--Grid row-->
-                        </form>
-                        
 
-                        <div>
-                            @if (ViewBag.Message != null)
-                            {
-                                <div>@ViewBag.Message</div>
-                            }
-                        </div>
+                            <div>
+                                @if (ViewBag.Message != null)
+                                {
+                                    <div>@ViewBag.Message</div>
+                                }
+                            </div>
 
-                        @*<div class="status">
-                            <script>
-                                function validateForm() {
-                                    var name = document.getElementById('name').value;
-                                    if (name == "") {
-                                        document.getElementById('status').innerHTML = "Name cannot be empty";
-                                        return false;
-                                    }
-                                    var email = document.getElementById('email').value;
-                                    if (email == "") {
-                                        document.getElementById('status').innerHTML = "Email cannot be empty";
-                                        return false;
-                                    } else {
-                                        var re = /^(([^<>()\[\]\\.,;:\s"]+(\.[^<>()\[\]\\.,;:\s"]+)*)|(".+"))$/;
-                                        if (!re.test(email)) {
-                                            document.getElementById('status').innerHTML = "Email format invalid";
+                            @*<div class="status">
+                                <script>
+                                    function validateForm() {
+                                        var name = document.getElementById('name').value;
+                                        if (name == "") {
+                                            document.getElementById('status').innerHTML = "Name cannot be empty";
                                             return false;
                                         }
-                                    }
-                                    var subject = document.getElementById('subject').value;
-                                    if (subject == "") {
-                                        document.getElementById('status').innerHTML = "Subject cannot be empty";
-                                        return false;
-                                    }
-                                    var message = document.getElementById('message').value;
-                                    if (message == "") {
-                                        document.getElementById('status').innerHTML = "Message cannot be empty";
-                                        return false;
-                                    }
-                                    document.getElementById('status').innerHTML = "Sending...";
-                                    formData = {
-                                        'name': $('input[name=name]').val(),
-                                        'email': $('input[name=email]').val(),
-                                        'subject': $('input[name=subject]').val(),
-                                        'message': $('textarea[name=message]').val()
-                                    };
-
-
-                                    $.ajax({
-                                        url: "mail.php",
-                                        type: "POST",
-                                        data: formData,
-                                        success: function (data, textStatus, jqXHR) {
-
-                                            $('#status').text(data.message);
-                                            if (data.code) //If mail was sent successfully, reset the form.
-                                                $('#contact-form').closest('form').find("input[type=text], textarea").val("");
-                                        },
-                                        error: function (jqXHR, textStatus, errorThrown) {
-                                            $('#status').text(jqXHR);
+                                        var email = document.getElementById('email').value;
+                                        if (email == "") {
+                                            document.getElementById('status').innerHTML = "Email cannot be empty";
+                                            return false;
+                                        } else {
+                                            var re = /^(([^<>()\[\]\\.,;:\s"]+(\.[^<>()\[\]\\.,;:\s"]+)*)|(".+"))$/;
+                                            if (!re.test(email)) {
+                                                document.getElementById('status').innerHTML = "Email format invalid";
+                                                return false;
+                                            }
                                         }
-                                    });
+                                        var subject = document.getElementById('subject').value;
+                                        if (subject == "") {
+                                            document.getElementById('status').innerHTML = "Subject cannot be empty";
+                                            return false;
+                                        }
+                                        var message = document.getElementById('message').value;
+                                        if (message == "") {
+                                            document.getElementById('status').innerHTML = "Message cannot be empty";
+                                            return false;
+                                        }
+                                        document.getElementById('status').innerHTML = "Sending...";
+                                        formData = {
+                                            'name': $('input[name=name]').val(),
+                                            'email': $('input[name=email]').val(),
+                                            'subject': $('input[name=subject]').val(),
+                                            'message': $('textarea[name=message]').val()
+                                        };
 
-                                }
-                            </script>
-                        </div>*@
+
+                                        $.ajax({
+                                            url: "mail.php",
+                                            type: "POST",
+                                            data: formData,
+                                            success: function (data, textStatus, jqXHR) {
+
+                                                $('#status').text(data.message);
+                                                if (data.code) //If mail was sent successfully, reset the form.
+                                                    $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+                                            },
+                                            error: function (jqXHR, textStatus, errorThrown) {
+                                                $('#status').text(jqXHR);
+                                            }
+                                        });
+
+                                    }
+                                </script>
+                            </div>*@
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
                     </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                </div>
                 }
                 <!--Grid column-->
             </section>
