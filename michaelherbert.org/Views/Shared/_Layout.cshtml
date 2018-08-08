@@ -53,7 +53,7 @@
                                 <a href="/Blog/Home">Blog Home</a>
                             </li>
                             <li id="blogPost">
-                                <a href="/Blog/Post">Newest Post</a>"
+                                <a href="/Blog/Post">Newest Post</a>
                             </li>
                         </ul>
                     </li>
@@ -72,9 +72,21 @@
                             <li id="Login">
                                 <a href="/Login/Login">Login Page</a>
                             </li>
-                            <li id="New User Registration">
-                                <a href="#"></a>
+                            <li id="userRegistration">
+                                <a href="/Login/UserRegistration">New User Registration</a>
                             </li>
+
+                            @if (Request.IsAuthenticated)
+                            {
+                                using (Html.BeginForm("Logout", "Login", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                <li id="Logout">
+                                    <a href="javascript:document.getElementById('logoutForm').submit()"
+                                        style="display: block; padding: 3px 20px; clear: both; font-weight: normal;
+                                            line-height: 1.42857143; color: #7b8a8b; white-space: nowrap;">Logout</a>
+                                </li>
+                                }
+                            }           
                         </ul>
                     </li>
 
