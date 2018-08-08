@@ -1,4 +1,6 @@
-﻿@{
+﻿@model michaelherbert.org.ViewModels.BlogViewModel
+
+@{
     ViewBag.Title = "Blog Post";
 }
 <section class="section bg-success" style="color: rgba(232, 181, 0, 0.90)">
@@ -105,29 +107,37 @@
                         </div>
                     </div>
                     <div class="row">
-                        @if (ViewBag.Message == null)
+                        @using (Html.BeginForm("Post", "Blog", FormMethod.Post))
                         {
+                            @Html.AntiForgeryToken()
                             <div class="well" style="margin: 15px;">
                                 <h4>This part will only be visible to "Admin/Password"</h4>
                                 <form id="blog-Form" name="blog-Form" method="post">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                     <div class="form-group">
-                                        <label for="Blog_Post_Title">Blog Post Title</label>
-                                        <input type="text" id="Blog_Post_Title" name="Blog_Post_Title" class="form-control">
+                                        @Html.LabelFor(model => model.Blog_Post_Title, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Blog_Post_Title, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Blog_Post_Title, "", new { @class = "text-danger" })
 
-                                        <label for="Blog_Post_Content">Blog Post Content</label>
-                                        <input type="text" id="Blog_Post_Content" name="Blog_Post_Content" rows="3" class="form-control" />
+                                        @*<label for="Blog_Post_Title">Blog Post Title</label>
+                                        <input type="text" id="Blog_Post_Title" name="Blog_Post_Title" class="form-control">*@
+
+                                        @Html.LabelFor(model => model.Blog_Post_Content, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Blog_Post_Content, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Blog_Post_Content, "", new { @class = "text-danger" })
+
+                                        @*<label for="Blog_Post_Content">Blog Post Content</label>
+                                        <input type="text" id="Blog_Post_Content" name="Blog_Post_Content" rows="3" class="form-control" />*@
                                     </div>
-                                    <button class="btn btn-primary" type="submit">Create Post</button>
+                                    <input type="submit" name="blogPostSubmit" id="blogPostSubmit" class="btn btn-default" value="Create Post" />
                                     @*<button class="btn btn-primary" type="submit">Edit Post</button>
-                                    <button class="btn btn-primary" type="submit">Delete Post</button>*@
+                    <button class="btn btn-primary" type="submit">Delete Post</button>*@
                                 </form>
 
                             </div>
                         }
-                        @if (ViewBag.Message != null)
-                        {
-                            <div>@ViewBag.Message</div>
-                        }
+
+
                     </div>
                 </div>
                 @*<p class="lead">Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>

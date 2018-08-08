@@ -49,7 +49,7 @@ namespace michaelherbert.org.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(BlogViewModel vm)
+        public ActionResult Post(string blogPostSubmit, BlogViewModel vm)
         {
             if (ModelState.IsValid)
             {
@@ -57,6 +57,20 @@ namespace michaelherbert.org.Controllers
                 int userID = 0;
                 
                 var blogPostDate = DateTime.Now;
+                //try
+                //{
+                //    TimeZoneInfo mstZone = TimeZoneInfo.FindSystemTimeZoneById("Mountain Standard Time");
+                //    DateTime mstTime = TimeZoneInfo.ConvertTimeFromUtc(blogPostDate, mstZone);
+                //}
+                //catch (TimeZoneNotFoundException)
+                //{
+
+                //}
+                //catch (InvalidTimeZoneException)
+                //{
+
+                //}
+                
                 var blogPostTitle = vm.Blog_Post_Title;
                 var blogPostContent = vm.Blog_Post_Content;
                     
@@ -82,6 +96,8 @@ namespace michaelherbert.org.Controllers
                 TempData["latestBlogTitle"] = blogPostTitle;
                 TempData["latestBlogContent"] = blogPostContent;
             }
+
+            ModelState.Clear();
             return View();
         }
 
