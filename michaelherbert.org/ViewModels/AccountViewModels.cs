@@ -100,8 +100,8 @@ namespace michaelherbert.org.ViewModels
         [Required]
         [Display(Name = "Blog Post Title")]
         public string Blog_Post_Title { get; set; }
+        [Required]
         [Display(Name = "Blog Post Content")]
-        //[Required]
         public string Blog_Post_Content { get; set; }
     }
 
