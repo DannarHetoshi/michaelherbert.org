@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using System.Text;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
+
 
 namespace michaelherbert.org.ViewModels
 {
@@ -33,7 +37,7 @@ namespace michaelherbert.org.ViewModels
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.CompareAttribute("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -71,7 +75,7 @@ namespace michaelherbert.org.ViewModels
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.CompareAttribute("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
         [Display(Name = "Security Question")]
@@ -103,6 +107,14 @@ namespace michaelherbert.org.ViewModels
         [Required]
         [Display(Name = "Blog Post Content")]
         public string Blog_Post_Content { get; set; }
+        [AllowHtml]
+        [Display(Name = "Message")]
+        public string Message { get; set; }
+    }
+
+    public class RichTextEditorViewModel
+    {
+        
     }
 
     public class Security

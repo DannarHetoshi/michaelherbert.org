@@ -7,13 +7,18 @@
     <meta name="description" content="Michael Herbert is a Freelance Web Developer available for immediate hire!">
     <meta name="keywords" content="Michael Herbert, Web, Website, Application, Software, Front-End, Back-End, Full-stack, Developer, Engineer.">
     <title>Michael Herbert - Home</title>
+    @Styles.Render("~/css")
+    @Scripts.Render("~/Scripts")
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/modern-business.css" rel="stylesheet">
+    <link href="~/css/summernote.css" rel="stylesheet">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/css/froala_style.min.css' rel='stylesheet' type='text/css' />
     @*<link href="~/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">*@
+        <link href="~/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="~/css/bootstrap.min.css" rel="stylesheet">*@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -80,13 +85,13 @@
                             {
                                 using (Html.BeginForm("Logout", "Login", FormMethod.Post, new { id = "logoutForm" }))
                                 {
-                                <li id="Logout">
-                                    <a href="javascript:document.getElementById('logoutForm').submit()"
-                                        style="display: block; padding: 3px 20px; clear: both; font-weight: normal;
+                                    <li id="Logout">
+                                        <a href="javascript:document.getElementById('logoutForm').submit()"
+                                           style="display: block; padding: 3px 20px; clear: both; font-weight: normal;
                                             line-height: 1.42857143; color: #7b8a8b; white-space: nowrap;">Logout</a>
-                                </li>
+                                    </li>
                                 }
-                            }           
+                            }
                         </ul>
                     </li>
 
@@ -115,7 +120,9 @@
     <!-- /.container -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
     <script src="@Url.Content("/js/bootstrap.js")"></script>
     <script src="@Url.Content("/js/modern-business.js")"></script>
+    <script src="@Url.Content("/js/summernote.js")"></script>
 </body>
-</html>
+</html >

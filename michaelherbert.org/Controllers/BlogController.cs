@@ -3,6 +3,9 @@ using System;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.Mvc;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 
 namespace michaelherbert.org.Controllers
@@ -25,6 +28,8 @@ namespace michaelherbert.org.Controllers
         [HttpGet]
         public ActionResult Post()
         {
+            
+
             string connStr = ConfigurationManager.ConnectionStrings["hetoshiCharityDBConnectionString"].ConnectionString;
 
 
@@ -45,6 +50,11 @@ namespace michaelherbert.org.Controllers
                     conn.Close();
                 }
             }
+
+            if (Convert.ToString(Session["userName"]) == "DannarHetoshi")
+            {
+                
+            }
             return View();
         }
 
@@ -56,7 +66,7 @@ namespace michaelherbert.org.Controllers
 
                 int userID = 0;
                 
-                var blogPostDate = DateTime.Now;
+                var blogPostDate = DateTime.UtcNow;
                 //try
                 //{
                 //    TimeZoneInfo mstZone = TimeZoneInfo.FindSystemTimeZoneById("Mountain Standard Time");
@@ -105,5 +115,9 @@ namespace michaelherbert.org.Controllers
         {
             return View();
         }
+    }
+    public class RichTextEditorViewModel
+    {
+        
     }
 }
