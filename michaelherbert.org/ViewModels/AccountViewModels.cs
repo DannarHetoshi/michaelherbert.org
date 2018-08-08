@@ -95,6 +95,14 @@ namespace michaelherbert.org.ViewModels
         public string Message { get; set; }
     }
 
+    public class BlogViewModel
+    {
+        [Required]
+        public string Blog_Post_Title { get; set; }
+        [Required]
+        public string Blog_Post_Content { get; set; }
+    }
+
     public class Security
     {
 
