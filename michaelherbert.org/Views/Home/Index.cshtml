@@ -103,22 +103,26 @@
                 <h2 class="h1-responsive font-weight-bold text-center my-5" style="margin-top: 0px; margin-bottom: 20px;">Contact Me</h2>
                 <!--Section description-->
                 <div class="col-sm-5">
-                    <p class="text-center w-responsive mx-auto mb-5">
+                    <p class="text-left w-responsive mx-auto mb-5">
                         Thanks for visiting my site!  I'm thrilled that you'd like to get in touch with me.
                     </p>
-                    <p class="text-center w-responsive mx-auto mb-5">
-                        Are you a recruiter?  A Hiring Manager?  Do you have a freelance work you'd like to contract me for?'
+                    <p class="text-left w-responsive mx-auto mb-5">
+                        Are you a recruiter?  A Hiring Manager?  Do you have a freelance work you'd like to contract me for?
                     </p>
-                    <p class="text-center w-responsive mx-auto mb-5">
+                    <p class="text-left w-responsive mx-auto mb-5">
                         Please find my contact information listed below!
                     </p>
                     <p class="text-center w-responsive mx-auto mb-5">
                     <p>
-                    <p class="text-center" style="background-color: inherit; color: #E8B500;">Michael Herbert</p>
-                    <p class="text-center" style="background-color: inherit; color: #E8B500;">Michael@MichaelHerbert.org</p>
-                    <p class="text-center" style="background-color: inherit; color: #E8B500;">913.269.4114</p>
+                    <p class="text-left" style="background-color: inherit; color: #E8B500;">Michael Herbert</p>
+                    <p class="text-left" style="background-color: inherit; color: #E8B500;">Michael@MichaelHerbert.org</p>
+                    <p class="text-left" style="background-color: inherit; color: #E8B500;">913.269.4114</p>
+                    <ul class="text-left list-unstyled list-inline list-social-icons" style="font-size: 24px; color: rgba(232, 181, 0, 0.90);">
+                        <li class="">Find me on: </li>
+                        <li class="tooltip-social linkedin-link"><a title="LinkedIn" data-placement="top" data-toggle="tooltip" href="https://www.linkedin.com/in/michael19herbert84"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li class="tooltip-social twitter-link"><a title="Twitter" data-placement="top" data-toggle="tooltip" href="https://www.twitter.com/DannarHetoshi"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
                 </div>
-
 
                 @if (ViewBag.Message == null)
                 {
@@ -175,71 +179,12 @@
                                 </div>
                                 <!--Grid row-->
                             </form>
-
-
                             <div>
                                 @if (ViewBag.Message != null)
                                 {
                                     <div>@ViewBag.Message</div>
                                 }
                             </div>
-
-                            @*<div class="status">
-                                <script>
-                                    function validateForm() {
-                                        var name = document.getElementById('name').value;
-                                        if (name == "") {
-                                            document.getElementById('status').innerHTML = "Name cannot be empty";
-                                            return false;
-                                        }
-                                        var email = document.getElementById('email').value;
-                                        if (email == "") {
-                                            document.getElementById('status').innerHTML = "Email cannot be empty";
-                                            return false;
-                                        } else {
-                                            var re = /^(([^<>()\[\]\\.,;:\s"]+(\.[^<>()\[\]\\.,;:\s"]+)*)|(".+"))$/;
-                                            if (!re.test(email)) {
-                                                document.getElementById('status').innerHTML = "Email format invalid";
-                                                return false;
-                                            }
-                                        }
-                                        var subject = document.getElementById('subject').value;
-                                        if (subject == "") {
-                                            document.getElementById('status').innerHTML = "Subject cannot be empty";
-                                            return false;
-                                        }
-                                        var message = document.getElementById('message').value;
-                                        if (message == "") {
-                                            document.getElementById('status').innerHTML = "Message cannot be empty";
-                                            return false;
-                                        }
-                                        document.getElementById('status').innerHTML = "Sending...";
-                                        formData = {
-                                            'name': $('input[name=name]').val(),
-                                            'email': $('input[name=email]').val(),
-                                            'subject': $('input[name=subject]').val(),
-                                            'message': $('textarea[name=message]').val()
-                                        };
-
-
-                                        $.ajax({
-                                            url: "mail.php",
-                                            type: "POST",
-                                            data: formData,
-                                            success: function (data, textStatus, jqXHR) {
-
-                                                $('#status').text(data.message);
-                                                if (data.code) //If mail was sent successfully, reset the form.
-                                                    $('#contact-form').closest('form').find("input[type=text], textarea").val("");
-                                            },
-                                            error: function (jqXHR, textStatus, errorThrown) {
-                                                $('#status').text(jqXHR);
-                                            }
-                                        });
-
-                                    }
-                                </script>
-                            </div>*@
                         </div>
                         <!--Grid column-->
                         <!--Grid column-->

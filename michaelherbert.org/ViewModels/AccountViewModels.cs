@@ -103,13 +103,48 @@ namespace michaelherbert.org.ViewModels
     {
         [Required]
         [Display(Name = "Blog Post Title")]
+        [AllowHtml]
         public string Blog_Post_Title { get; set; }
         [Required]
         [Display(Name = "Blog Post Content")]
+        [AllowHtml]
         public string Blog_Post_Content { get; set; }
         [AllowHtml]
         [Display(Name = "Message")]
         public string Message { get; set; }
+    }
+
+    public class BlogHomeModel
+    {
+        public string BlogPostTitle { get; set; }
+        public string BlogPostContent { get; set; }
+        public string BlogPostDate { get; set; }
+    }
+
+
+    public class BlogHomeViewModel
+    {
+
+        [Required]
+        [Display(Name = "Blog Post Date")]
+        [AllowHtml]
+        public string BlogPostDate { get; set; }
+
+        [Required]
+        [Display(Name = "Blog Post Title")]
+        [AllowHtml]
+        public string BlogPostTitle { get; set; }
+
+        [Required]
+        [Display(Name = "Blog Post Content")]
+        [AllowHtml]
+        public string BlogPostContent { get; set; }
+               
+        [Required]
+        [Display(Name = "Blog Row Num")]
+        public int BlogIDNum { get; set; }
+                
+
     }
 
     public class RichTextEditorViewModel

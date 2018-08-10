@@ -16,6 +16,7 @@
     <link href="~/css/summernote.css" rel="stylesheet">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/css/froala_editor.min.css' rel='stylesheet' type='text/css' />
     <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/css/froala_style.min.css' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     @*<link href="~/css/bootstrap-theme.css" rel="stylesheet">
         <link href="~/css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="~/css/bootstrap.min.css" rel="stylesheet">*@
@@ -105,9 +106,7 @@
     @RenderBody()
 
     <div class="container">
-
         <hr>
-
         <footer>
             <div class="row">
                 <div class="col-lg-12">
@@ -115,7 +114,6 @@
                 </div>
             </div>
         </footer>
-
     </div>
     <!-- /.container -->
 
@@ -124,5 +122,7 @@
     <script src="@Url.Content("/js/bootstrap.js")"></script>
     <script src="@Url.Content("/js/modern-business.js")"></script>
     <script src="@Url.Content("/js/summernote.js")"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
 </body>
 </html >

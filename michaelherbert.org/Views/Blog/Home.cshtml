@@ -1,12 +1,15 @@
-﻿@{
-    ViewBag.Title = "Blog Home 2";
+﻿@using michaelherbert.org.Models
+@model  michaelherbert.org.ViewModels.BlogHomeViewModel 
+
+@{
+    ViewBag.Title = "Blog Home";
 }
 <div class="container bg-success" style="color: rgba(232, 181, 0, 0.90);">
     <div class="row bg-fill">
         <div class="col-lg-12">
             <h1 class="page-header">
                 Michael Herbert
-                <small>Blog</small>
+                <small>Blog Homepage</small>
             </h1>
             <ol class="breadcrumb">
                 <li>
@@ -18,93 +21,52 @@
     </div>
 
     <div class="container bg-fill">
-        <div class="row">
-            <div class="col-md-1">
-                <p>
-                    <i class="fa fa-camera fa-4x"></i>
-                </p>
-                <p>May 24, 2013</p>
-            </div>
-            <div class="col-md-5">
-                <a href="@Url.Action("Post")">
-                    <img class="img-responsive" src="http://placehold.it/600x300">
-                </a>
-            </div>
-            <div class="col-md-6">
-                <h3>
-                    <a href="@Url.Action("Post")">A Blog Home Template for Bootstrap 3</a>
-                </h3>
-                <p>
-                    by <a href="#">Start Bootstrap</a>
-                </p>
-                <p>This is a very basic starter template for a blog homepage. It makes use of Font Awesome icons that are built into the 'Modern Business' template, and it makes use of the Bootstrap 3 pager at the bottom of the page.</p>
-                <a href="@Url.Action("Post")" class="btn btn-primary">Read More <i class="fa fa-angle-right"></i></a>
-            </div>
-        </div>
 
+        @*@int = blogRowNum[];*@
 
-        <hr>
-        <div class="row">
-            <div class="col-md-1">
-                <p>
-                    <i class="fa fa-film fa-4x"></i>
-                </p>
-                <p>May 24, 2013</p>
-            </div>
-            <div class="col-md-5">
-                <a href="@Url.Action("Post")">
-                    <img class="img-responsive" src="http://placehold.it/600x300">
-                </a>
-            </div>
-            <div class="col-md-6">
-                <h3>
-                    <a href="@Url.Action("Post")">A Blog Home Template for Bootstrap 3</a>
-                </h3>
-                <p>
-                    by <a href="#">Start Bootstrap</a>
-                </p>
-                <p>This is a very basic starter template for a blog homepage. It makes use of Font Awesome icons that are built into the 'Modern Business' template, and it makes use of the Bootstrap 3 pager at the bottom of the page.</p>
-                <a href="@Url.Action("Post")" class="btn btn-primary">Read More <i class="fa fa-angle-right"></i></a>
-            </div>
-        </div>
+        @for (int i = 0; i < 3; i++)
+        {
+            //int blogRowNum[i] = BlogRowNum;
+            string dateID = "BlogPostDate" + i;
+            string titleID = "BlogPostTitle" + i;
+            string contentID = "BlogPostContent" + i;
 
+            michaelherbert.org.ViewModels.BlogHomeViewModel vm = new michaelherbert.org.ViewModels.BlogHomeViewModel();
 
-        <hr>
-        <div class="row">
-            <div class="col-md-1">
-                <p>
-                    <i class="fa fa-file-text fa-4x"></i>
-                </p>
-                <p>May 24, 2013</p>
-            </div>
-            <div class="col-md-5">
-                <a href="@Url.Action("Post")">
-                    <img class="img-responsive" src="http://placehold.it/600x300">
-                </a>
-            </div>
-            <div class="col-md-6">
-                <h3>
-                    <a href="@Url.Action("Post")">A Blog Home Template for Bootstrap 3</a>
-                </h3>
-                <p>
-                    by <a href="#">Start Bootstrap</a>
-                </p>
-                <p>This is a very basic starter template for a blog homepage. It makes use of Font Awesome icons that are built into the 'Modern Business' template, and it makes use of the Bootstrap 3 pager at the bottom of the page.</p>
-                <a href="@Url.Action("Post")" class="btn btn-primary">Read More <i class="fa fa-angle-right"></i></a>
-            </div>
-        </div>
+            <div class="row">
+                <div class="col-md-1">
+                    <p><label id="@{@dateID}">@Html.Raw(TempData["bpd" + i + ""])</label> </p>
 
+                </div>
+                <div class="col-md-5">
+                    <a href="@Url.Action("Post" + i)">
+                        <img class="img-responsive" src="~/images/coding-blog.png" />
+                    </a>
+                </div>
+                <div class="col-md-6">
 
-        <hr>
-        <div class="row">
-            <ul class="pager">
-                <li class="previous">
-                    <a href="#">← Older</a>
-                </li>
-                <li class="next">
-                    <a href="#">Newer →</a>
-                </li>
-            </ul>
-        </div>
+                    <h3><a href="@Url.Action("Post" + i)"><label id="@{@titleID}">@Html.Raw(TempData["bpt" + i + ""])</label></a></h3>
+                    <p>by <a href="#">Michael Herbert</a></p>
+
+                    <label id="@{@contentID}">@Html.Raw(TempData["bpc" + i + ""])</label>
+
+                    <p><a href="@Url.Action("Post" + i)" class="btn btn-primary">Read More <i class="fa fa-angle-right"></i></a></p>
+                </div>
+            </div>
+            <hr>
+        }
+        <h5>@Html.Raw(TempData["lastID"])</h5>
+        <form id="blog-Form" name="blog-Form" method="post">
+            <div class="row">
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="@Url.Action("Home", "Blog", new { name = "changePost", type = "older", lastID = TempData["currentRow"] })">← Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="@Url.Action("Home", "Blog", new { name = "changePost", type = "newer", lastID = (Convert.ToInt32(TempData["currentRow"])-3) })">Newer →</a>
+                    </li>
+                </ul>
+            </div>
+        </form>
     </div>
 </div>

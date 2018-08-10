@@ -15,6 +15,7 @@ namespace michaelherbert.org
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            App_Start.BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }
